@@ -3,9 +3,10 @@ $(function () {
   let buttons = $(".saveBtn");
 
   buttons.on('click', function(event) {
-    let parent = $(this).parent();
+    let parent = $(this).parent().attr('id');
     let description = $(this).closest(".description");
     console.log(description);
+    localStorage.setItem(parent, description);
   });
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
